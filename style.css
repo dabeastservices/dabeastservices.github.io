@@ -322,3 +322,27 @@ p a {
     padding: 5px;
     border: 2px solid #777;
 }
+
+.image-container-big {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center; /* Center the images within the container */
+}
+
+.image-frame-big {
+    width: 250px; /* Increased size for larger images */
+    height: 250px; /* Keep the same as width for a circle */
+    object-fit: cover;
+    padding: 5px; /* Space inside the border */
+    border: 3px solid #777; /* Slightly thicker border for larger images */
+    border-radius: 50%; /* Ensures images are circular */
+}
+
+.bullet-point::before {
+    content: "\2022";  /* Unicode character for bullet point */
+    color: #FFF; /* Bullet point color */
+    display: inline-block; 
+    width: 1em; /* Space before bullet points */
+    margin-left: -1em; /* Align bullet points with text */
+}
