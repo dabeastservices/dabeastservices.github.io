@@ -1,0 +1,19 @@
+User-Agent: *
+Disallow: /*.jpg
+Disallow: /*.jpeg
+Disallow: /*.png
+Disallow: /*.gif
+Disallow: /*.svg
+Disallow: /*.mp4
+Disallow: /*.avi
+Disallow: /*.mov
+Disallow: /*.wmv
+Disallow: /*.txt
+
+User-Agent: Googlebot-Image
+Disallow: /
+
+User-Agent: Googlebot-Video
+Disallow: /
+
+Sitemap: https://dabeastservices.com/sitemap.xml
