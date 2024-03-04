@@ -309,40 +309,69 @@ p a {
 }
 
 .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px; /* Adjust the space between images */
-    justify-content: center; /* Center the images within the container */
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	/* Adjust the space between images */
+	justify-content: center;
+	/* Center the images within the container */
 }
 
 .image-frame {
-    width: 190px;
-    height: 190px;
-    object-fit: cover;
-    padding: 5px;
-    border: 2px solid #777;
+	width: 190px;
+	height: 190px;
+	object-fit: cover;
+	padding: 5px;
+	border: 2px solid #777;
 }
 
 .image-container-big {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: center; /* Center the images within the container */
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	justify-content: center;
+	/* Center the images within the container */
 }
 
 .image-frame-big {
-    width: 250px; /* Increased size for larger images */
-    height: 250px; /* Keep the same as width for a circle */
-    object-fit: cover;
-    padding: 5px; /* Space inside the border */
-    border: 3px solid #777; /* Slightly thicker border for larger images */
-    border-radius: 50%; /* Ensures images are circular */
+	width: 250px;
+	/* Increased size for larger images */
+	height: 250px;
+	/* Keep the same as width for a circle */
+	object-fit: cover;
+	padding: 5px;
+	/* Space inside the border */
+	border: 3px solid #777;
+	/* Slightly thicker border for larger images */
+	border-radius: 50%;
+	/* Ensures images are circular */
 }
 
 .bullet-point::before {
-    content: "\2022";  /* Unicode character for bullet point */
-    color: #FFF; /* Bullet point color */
-    display: inline-block; 
-    width: 1em; /* Space before bullet points */
-    margin-left: -1em; /* Align bullet points with text */
+	content: "\2022";
+	/* Unicode character for bullet point */
+	color: #FFF;
+	/* Bullet point color */
+	display: inline-block;
+	width: 1em;
+	/* Space before bullet points */
+	margin-left: -1em;
+	/* Align bullet points with text */
+}
+
+.custom-video-wrapper {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+	/* Adjust this value based on your preferred aspect ratio */
+}
+
+.custom-video-wrapper video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* This will crop and fit the video to the container */
 }
