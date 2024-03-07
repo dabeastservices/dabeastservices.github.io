@@ -49,6 +49,10 @@ a {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1000px;
+	
+	padding-left: 8px;
+	padding-right: 8px;
+	box-sizing: border-box;
 }
 
 @media (max-width: 992px) {
@@ -131,7 +135,7 @@ main {
 
 a:link:not(.btn, .navbar-brand, .nav-link),
 a:visited:not(.btn, .navbar-brand, .nav-link) {
-	color: #6ead6e;
+	color: #ad7f6e;
 }
 
 a:hover:not(.btn, .navbar-brand, .nav-link) {
@@ -231,7 +235,7 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 
 }
 .bg-color-dim {
-	background-color: #d4c397;
+	background-color: #d9caa3;
 }
 
 .bg-color-dimmer {
