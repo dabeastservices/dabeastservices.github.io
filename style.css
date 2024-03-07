@@ -223,31 +223,47 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 	transform: scale(1.25);
 }
 
-.bg-color,
-.bg-color-dim,
+.bg-color {
+	background-color: #ebdbb7;
+
+}
+.bg-color-dim {
+	background-color: #d4c397;
+}
+
 .bg-color-dimmer {
-	background-color: #212529;
+	background-color: #c7dbea;
+}
+.bg-color-container {
+	background-color: #3d465c;
 }
 
 .bg-color-inv {
-	background-color: #99e3ca;
+	background-color: #4a7768;
 }
 
 .bg-card-color {
 	background-color: rgba(51, 91, 131, 0.02);
 }
 
-.text-color,
-.text-color-dim,
-.text-color-dimmer,
+.text-color {
+	color: #202828;
+}
+
+.text-color-dim {
+	color: #055aa1;
+}
+.text-color-dimmer {
+	color: #c7dbea;
+}
 .text-color-bold,
 p a {
-	color: #f7f9f9;
+	color: #000000;
 }
 
 .text-color-inv,
 p a {
-	color: white;
+	color: #f7f9f9;
 }
 
 .highlight-badge {
