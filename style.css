@@ -333,6 +333,13 @@ p a {
 	/* Center the images within the container */
 }
 
+.square-img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	aspect-ratio: 1 / 1;
+}
+
 .image-frame-big {
 	width: 250px;
 	/* Increased size for larger images */
@@ -374,4 +381,12 @@ p a {
 	height: 100%;
 	object-fit: cover;
 	/* This will crop and fit the video to the container */
+}
+
+.centered-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 100%;
 }
