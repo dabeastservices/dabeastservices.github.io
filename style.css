@@ -66,8 +66,8 @@ a {
 	.container-main {
 		max-width: 700px;
 		padding-left: 8px;
-        padding-right: 8px;
-        box-sizing: border-box;
+		padding-right: 8px;
+		box-sizing: border-box;
 	}
 
 	.container {
