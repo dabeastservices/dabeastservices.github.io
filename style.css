@@ -241,8 +241,14 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 .bg-color-dimmer {
 	background-color: #c7dbea;
 }
+
 .bg-color-container {
 	background-color: #3d465c;
+}
+
+.bg-color-header {
+	background-color: #f4e8c8;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
 .bg-color-inv {
