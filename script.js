@@ -9,11 +9,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 // Initialization of the page
 function init() {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-RKBJNST9BF');
 	feather.replace({
 		'aria-hidden': 'true' // Update the icons
 	});
 }
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RKBJNST9BF');
