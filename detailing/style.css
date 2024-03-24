@@ -70,6 +70,10 @@ a {
 		box-sizing: border-box;
 	}
 
+	.img-list {
+		width: 50%;
+	}
+
 	.container {
 		max-width: inherit !important;
 	}
