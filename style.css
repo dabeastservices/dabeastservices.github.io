@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 body {
-	--border-color: gray;
+	--border-color: #8CD872;
 	--bg-color: #f8f9fa;
 	--bg-color-inv: #4a7768;
 	--bg-color-dim: #ecf2f5;
@@ -55,6 +55,11 @@ a {
 	box-sizing: border-box;
 }
 
+
+.container-main, nav {
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 992px) {
 	.container-main {
 		max-width: 900px;
@@ -89,7 +94,7 @@ a {
 	/* Give room for the night mode switch */
 	#contactNav {
 		margin-right: 100px !important;
-		border-right: 1px solid rgba(180, 180, 180, 0.3) !important;
+		border-right: 2px solid var(--border-color) !important;
 	}
 }
 
@@ -123,14 +128,8 @@ main {
 	padding-top: 50px;
 }
 
-#profile {
-	border-radius: 50%;
-	width: 160px;
-	display: block;
-	margin: 0 auto;
-	padding: 8px;
-	box-shadow: 0 0 1px rgba(200, 200, 200, 0.8);
-	pointer-events: none;
+.image-container img {
+	border-radius: 10px;
 }
 
 a:link:not(.btn, .navbar-brand, .nav-link),
@@ -168,7 +167,7 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 }
 
 .border-bottom-dim {
-	border-bottom: var(--bs-border-width) var(--bs-border-style) rgba(180, 180, 180, 0.3) !important;
+	border-bottom: 2px var(--bs-border-style) var(--border-color) !important;
 }
 
 .blind {
@@ -231,11 +230,11 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 }
 
 .bg-color {
-	background-color: #ebdbb7;
+	background-color: #3d465c;
 
 }
 .bg-color-dim {
-	background-color: #d9caa3;
+	background-color: #95a5cf;
 }
 
 .bg-color-dimmer {
@@ -243,11 +242,11 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 }
 
 .bg-color-container {
-	background-color: #3d465c;
+	background-color: #2c3241;
 }
 
 .bg-color-header {
-	background-color: #f4e8c8;
+	background-color: #4c597a;
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -279,6 +278,18 @@ p a {
 	color: #f7f9f9;
 }
 
+.text-color-inv-dim {
+	color: #a0d3d3;
+}
+
+.text-color-inv-dim u {
+	color: #ffffff;
+}
+
+a.text-color-inv:hover {
+	color: #cdeee2;
+}
+
 .highlight-badge {
 	color: inherit !important;
 }
@@ -289,9 +300,9 @@ p a {
 
 #portfolioDropdown {
 	margin-top: 7.8px;
-	border-left: var(--bs-border-width) var(--bs-border-style) rgba(180, 180, 180, 0.3);
-	border-right: var(--bs-border-width) var(--bs-border-style) rgba(180, 180, 180, 0.3);
-	border-bottom: var(--bs-border-width) var(--bs-border-style) rgba(180, 180, 180, 0.3);
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--border-color);
+	border-right: var(--bs-border-width) var(--bs-border-style) var(--border-color);
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--border-color);
 	border-top: none !important;
 	border-top-left-radius: 0 !important;
 	border-top-right-radius: 0 !important;
@@ -351,7 +362,7 @@ p a {
 	height: 190px;
 	object-fit: cover;
 	padding: 5px;
-	border: 2px solid #777;
+	border: 2px solid var(--border-color);
 }
 
 .image-container-big {
@@ -377,7 +388,7 @@ p a {
 	object-fit: cover;
 	padding: 5px;
 	/* Space inside the border */
-	border: 3px solid #777;
+	border: 3px solid var(--border-color);
 	/* Slightly thicker border for larger images */
 	border-radius: 50%;
 	/* Ensures images are circular */

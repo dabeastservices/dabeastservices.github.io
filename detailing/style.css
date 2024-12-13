@@ -127,16 +127,6 @@ main {
 	padding-top: 50px;
 }
 
-#profile {
-	border-radius: 50%;
-	width: 160px;
-	display: block;
-	margin: 0 auto;
-	padding: 8px;
-	box-shadow: 0 0 1px rgba(200, 200, 200, 0.8);
-	pointer-events: none;
-}
-
 a:link:not(.btn, .navbar-brand, .nav-link),
 a:visited:not(.btn, .navbar-brand, .nav-link) {
 	color: #ad7f6e;
