@@ -140,15 +140,15 @@ main {
 
 a:link:not(.btn, .navbar-brand, .nav-link),
 a:visited:not(.btn, .navbar-brand, .nav-link) {
-	color: #ad7f6e;
+	color: #72d8d1;
 }
 
 a:hover:not(.btn, .navbar-brand, .nav-link) {
-	color: #c9749f;
+	color: #72a0d8;
 }
 
 a:active:not(.btn, .navbar-brand, .nav-link) {
-	color: #17a5a5;
+	color: #d872ca;
 }
 
 .nav-link-uline {
@@ -270,14 +270,14 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 }
 
 .text-color-dim {
-	color: #ab7d45;
+	color: #4aab45;
 }
 .text-color-dimmer {
 	color: #c7dbea;
 }
 .text-color-bold,
 p a {
-	color: #000000;
+	color: #FFFFFF;
 }
 
 .text-color-inv,
