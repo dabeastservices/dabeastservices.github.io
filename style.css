@@ -110,8 +110,19 @@ a {
 
 	.center-on-mobile img {
 		box-shadow: 100px 0 90px -15px #8CD872, -100px 0 90px -15px #8CD872;
-
 	}
+
+	/* Green haze */
+	.navbar-collapse li.nav-item a {
+		padding-left: 20px;
+	}
+}
+
+/* Green haze */
+.navbar-collapse li.nav-item {
+	box-shadow: 40px 0 20px -20px #8CD872, -40px 0 20px -20px #8CD872;
+	border-radius: 10px;
+	white-space: nowrap;
 }
 
 /* Scrollbars */
