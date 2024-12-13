@@ -102,6 +102,16 @@ a {
 		margin-right: 100px !important;
 		border-right: 2px solid var(--border-color) !important;
 	}
+
+	.center-on-mobile {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.center-on-mobile img {
+		box-shadow: 100px 0 90px -15px #8CD872, -100px 0 90px -15px #8CD872;
+
+	}
 }
 
 /* Scrollbars */
