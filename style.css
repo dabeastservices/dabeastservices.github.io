@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 body {
-	--border-color: #8CD872;
+	--border-color: #72D88D;
 	--bg-color: #f8f9fa;
 	--bg-color-inv: #4a7768;
 	--bg-color-dim: #ecf2f5;
@@ -56,6 +56,8 @@ a {
 	
 	border-left: 2px solid var(--border-color);
 	border-right: 2px solid var(--border-color);
+
+	box-shadow: 70px 0 90px -15px #72D88D45, -70px 0 90px -15px #72D88D45 !important;
 }
 
 .card-body {
@@ -109,7 +111,7 @@ a {
 	}
 
 	.center-on-mobile img {
-		box-shadow: 100px 0 90px -15px #8CD872, -100px 0 90px -15px #8CD872;
+		box-shadow: 100px 0 90px -15px #72D88D, -100px 0 90px -15px #72D88D;
 	}
 
 	/* Green haze */
@@ -120,7 +122,7 @@ a {
 
 /* Green haze */
 .navbar-collapse li.nav-item {
-	box-shadow: 40px 0 20px -20px #8CD872, -40px 0 20px -20px #8CD872;
+	box-shadow: 40px 0 20px -20px #72D88D, -40px 0 20px -20px #72D88D;
 	border-radius: 10px;
 	white-space: nowrap;
 }
@@ -287,7 +289,7 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 }
 
 .text-color {
-	color: #8CD872;
+	color: #72D88D;
 }
 
 .text-color-dim {
