@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta name='description' content='DaBeastServices official webpage.'>
+	<meta name='author' content='Clyde Campbell'>
+	<title>Menu - DaBeast Catering</title>
+	<link rel='icon' href='favicon.ico'>
+	<link href='lib/css/bootstrap.min.css' rel='stylesheet'>
+	<link href='style.css' type='text/css' rel='stylesheet'>
+		<style>
+		canvas {
+			display: block;
+			margin: 0 auto;
+			padding: 0;
+			border: none;
+		}
+
+		#pdf-container {
+			position: relative;
+			overflow-x: hidden;
+			overflow-y: auto;
+			/* min-height: calc(100vh - 200px); */
+			margin: 0 auto;
+		}
+
+		.link-annotation {
+			position: relative;
+			z-index: 2;
+			border: 2px solid transparent;
+			border-radius: 200px;
+			transition: border 0.3s;
+		}
+
+		.link-annotation:hover {
+			cursor: pointer;
+			background-color: rgba(28, 238, 206, 0.3) !important;
+			border: 2px solid rgba(0, 0, 0);
+			opacity: 0.5;
+			transition: background-color 0.3s, border 0.3s, opacity 0.3s;
+		}
+
+		#pdf-container canvas {
+			z-index: 1;
+		}
+
+		#pdf-container .canvas-wrapper {
+			position: relative;
+			width: 100% !important;
+			display: block;
+			overflow: hidden;
+		}
+
+		#pdf-container canvas {
+			position: relative;
+			width: 100% !important;
+			height: auto !important;
+		}
+
+		.container-main {
+			position: relative;
+		}
+
+		.footer-col,
+		.footer-col-auto {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		.float-download {
+			padding: 5px 0;
+			margin-top: -10px;
+			margin-bottom: -10px;
+			margin-left: 8px;
+		}
+	</style>
+	<link href='lib/css/pdf_viewer.min.css' rel='stylesheet'>
+</head>
+
+<body class='bg-color-container'>
+	<header class='container-main navbar navbar-expand-md navbar-light bg-color-header sticky-top border-bottom-dim'>
+		<div class='container'>
+			<a class='navbar-brand text-center fs-5 col-md-3 border-0 bg-transparent text-color-inv nav-link-uline'
+				href='/'><b>DaBeast</b> Catering Home</a>
+			<button class='navbar-toggler text-color' type='button' data-bs-toggle='collapse'
+				data-bs-target='#navbarContent' aria-controls='navbarContent' aria-expanded='false'
+				aria-label='Toggle navigation'>
+				<span class='navbar-toggler-icon' data-feather='menu'></span>
+			</button>
+			<div class='collapse navbar-collapse' id='navbarContent'>
+				<ul class='navbar-nav me-auto'>
+					<li class='nav-item ms-3'><a class='nav-link nav-link-uline fs-5 text-color-inv' href='menu_food_truck'>Food Truck Menu</a></li>
+					<li class='nav-item ms-3'><a class='nav-link nav-link-uline fs-5 text-color-inv'
+							href='catering'>Services</a></li>
+					<li class='nav-item ms-3'><a class='nav-link nav-link-uline fs-5 text-color-inv' href='menu_catering'>Catering Menu</a></li>
+					<li class='nav-item ms-3'><a class='nav-link nav-link-uline fs-5 text-color-inv'
+							href='contact'>Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class='container-main d-flex flex-wrap bg-color fade'>
+		<main class='w-100 bg-color p-0'>
+			<div class='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center'>
+				<div id='pdf-container'></div>
+			</div>
+		</main>
+	</div>
+	<footer class='container-main footer text-color bg-color-dim'>
+		<div class='row'>
+			<div class='col-auto footer-col-auto'>
+				<div class='float-download'>
+					<a href='misc/Food_Truck_Menu.pdf' target='_blank' rel='noopener noreferrer'
+						class='btn btn-sm btn-dark'>Download</a>
+				</div>
+			</div>
+			<div class='col text-center' style='overflow-x: auto'>
+				Copyright © 2025 DaBeast Catering LLC. All rights reserved.
+			</div>
+		</div>
+	</footer>
+	<script src='lib/js/bootstrap.bundle.min.js' defer></script>
+	<script async src='https://www.googletagmanager.com/gtag/js?id=G-RKBJNST9BF'></script>
+	<script type='text/javascript' src='lib/js/feather.min.js'></script>
+	<script type='text/javascript' src='lib/js/pdf.min.js'></script>
+	<script type='text/javascript' src='lib/js/pdf.sandbox.min.js'></script>
+	<script type='text/javascript' src='script.js'></script>
+	<script type='text/javascript'>
+		pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://dabeastservices.com/lib/js/pdf.worker.min.js';
+
+		let pdfDoc = null,
+			scale = 6,
+			canvas,
+			ctx;
+
+		// Update the PDF when the page loads
+		function renderPage(num) {
+			pdfDoc.getPage(num).then(function (page) {
+				let viewport = page.getViewport({ scale: scale });
+
+				// Create canvas wrapper div
+				let canvasWrapper = document.createElement('div'); // One for each page
+				canvasWrapper.className = 'canvas-wrapper';
+				canvasWrapper.style.width = `${viewport.width}px`;
+				canvasWrapper.style.marginTop = `5px`;
+				canvasWrapper.style.marginBottom = `5px`;
+				canvasWrapper.style.borderRadius = `10px`;
+				canvasWrapper.style.border = `1px solid rgba(0, 0, 0, 0.3)`;
+
+				canvas = document.createElement('canvas');
+				canvas.style.display = 'block';
+				canvas.style.margin = '0 auto';
+				ctx = canvas.getContext('2d');
+				canvas.height = viewport.height;
+				canvas.width = viewport.width;
+
+				// Remove the contextmenu to prevent right-clicking
+				canvas.addEventListener('contextmenu', function (e) {
+					e.preventDefault();
+				});
+
+				// Append canvas to the canvasWrapper
+				canvasWrapper.appendChild(canvas);
+
+				// Append canvasWrapper to pdf-container
+				document.getElementById('pdf-container').appendChild(canvasWrapper);
+
+				let renderContext = {
+					canvasContext: ctx,
+					viewport: viewport,
+					intent: 'display'
+				};
+				ctx.translate(-viewport.x, -viewport.y); // Ensure rendering starts from top-left corner
+
+				requestAnimationFrame(() => {
+					page.render(renderContext).promise.then(function () {
+						// Render next page once the current one is rendered.
+						if (num < pdfDoc.numPages) {
+							renderPage(num + 1);
+						}
+					}).catch(function(error) {
+						console.error('Error during page rendering:', error);
+					});
+				});
+
+				// Determine the effective scale after rendering
+				const actualWidth = canvas.offsetWidth;
+				const effectiveScale = actualWidth / viewport.width;
+				let linkAnnotationPaddingX = 8;
+				let linkAnnotationPaddingY = 3;
+
+				// After rendering, fetch link annotations
+				page.getAnnotations().then(annotations => {
+					annotations.forEach(annotation => {
+						if (annotation.subtype === 'Link' && annotation.url) {
+							const linkEl = document.createElement('a');
+							const rect = annotation.rect;
+							rect[0] -= linkAnnotationPaddingX;
+							rect[1] -= linkAnnotationPaddingY;
+							rect[2] += linkAnnotationPaddingX;
+							rect[3] += linkAnnotationPaddingY;
+							const linkWidth = rect[2] - rect[0];
+							const linkHeight = rect[3] - rect[1];
+
+							linkEl.classList.add('link-annotation');
+
+							// Adjust link position based on the viewport and effectiveScale
+							linkEl.style.position = 'absolute';
+							linkEl.style.left = `${rect[0] * scale * effectiveScale}px`;
+							linkEl.style.top = `${(canvas.height - (rect[1] + linkHeight) * scale) * effectiveScale}px`;
+							linkEl.style.width = `${linkWidth * effectiveScale * scale}px`;
+							linkEl.style.height = `${linkHeight * effectiveScale * scale}px`;
+
+							linkEl.href = annotation.url;
+							linkEl.target = '_blank';
+							linkEl.title = annotation.url;
+							canvasWrapper.appendChild(linkEl);
+						}
+					});
+				});
+			});
+		}
+
+		// Set up the PDF viewer
+		pdfjsLib.getDocument('misc/Food_Truck_Menu.pdf').promise.then(function (pdfDoc_) {
+			pdfDoc = pdfDoc_;
+			renderPage(1);
+		});
+
+		// Adjust the iframe height to fit the window
+		function adjustIframeHeight() {
+			const headerHeight = document.querySelector('header').offsetHeight;
+			const footerHeight = document.querySelector('footer').offsetHeight;
+			const iframeHeight = window.innerHeight - headerHeight - footerHeight;
+			document.getElementById('pdf-container').style.height = iframeHeight + 'px';
+		}
+
+		window.addEventListener('resize', adjustIframeHeight);
+		window.addEventListener('DOMContentLoaded', adjustIframeHeight);
+
+	</script>
+</body>
+
+</html>

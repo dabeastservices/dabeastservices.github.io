@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta name='robots' content='noindex, nofollow'>
+	<title>Redirecting to Menu</title>
+	<meta name='description' content='DaBeastServices official webpage.'>
+	<meta name='author' content='Clyde Campbell'>
+	<link rel='icon' href='favicon.ico'>
+	<link href='lib/css/bootstrap.min.css' rel='stylesheet'>
+	<link href='style.css' type='text/css' rel='stylesheet'>
+	<style>
+		body {
+			user-select: none;
+		}
+	</style>
+</head>
+
+<body class='bg-color-container'>
+	<div class='form-check form-switch' style='display: none;'>
+		<label class='form-check-label text-color cursor-pointer' for='nightModeToggle'><i id='dayNightIcon'
+				data-feather='sun'></i></label>
+		<input class='form-check-input d-none' type='checkbox' id='nightModeToggle' onchange='toggleDayNightIcon()'>
+	</div>
+
+	<div class='text-center mt-5 fade'>
+		<p class='text-color-dim animated fadeIn delay-2s mb-4'>Redirect to <a href='https://dabeastservices.com/menu_food_truck' target='_blank' rel='noopener noreferrer'>https://dabeastservices.com/menu_food_truck</a>.</p>
+	</div>
+
+	<script src='https://dabeastservices.com/lib/js/bootstrap.bundle.min.js'></script>
+	<script src='https://dabeastservices.com/lib/js/feather.min.js'></script>
+	<script type='text/javascript' src='https://dabeastservices.com/script.min.js'></script>
+
+	<script type='text/javascript'>
+		window.location.replace('https://dabeastservices.com/menu_food_truck');
+	</script>
+</body>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<meta name='description' content='Error 404'>
+	<meta name='author' content='Clyde Campbell'>
+	<title>Page Not Found</title>
+	<link rel='icon' href='https://dabeastservices.github.io/favicon.ico'>
+	<link href='https://dabeastservices.github.io/lib/css/bootstrap.min.css' rel='stylesheet'>
+	<link href='https://dabeastservices.github.io/style.css' type='text/css' rel='stylesheet'>
+	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet'>
+	<link rel='preconnect' href='https://fonts.googleapis.com'>
+	<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+	<link href='https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap' rel='stylesheet'>
+	<style>
+		body {
+			user-select: none;
+		}
+	</style>
+</head>
+
+<body class='bg-color-container'>
+	<div id='container' class='container-main d-flex flex-wrap bg-color fade justify-content-center align-items-center'
+		style='min-height: 60vh;'>
+		<div class='text-center'>
+			<i data-feather='map' class='mb-4 text-color-dim'
+				style='width: 200px; height: 200px; margin-top: -100px; transform: rotate(-90deg);'></i>
+			<h1 class='text-color-bold mb-4 animated fadeIn' style='font-size: 8rem; font-family: "Quicksand",
+				sans-serif;'>404</h1>
+			<h4 class='text-color animated fadeIn delay-1s mb-4'>Page Not Found</h4>
+			<p class='text-color-dim animated fadeIn delay-2s mb-4'>The page you're looking for doesn't exist.</p>
+			<a href='https://dabeastservices.github.io' class='btn btn-outline-dark animated fadeIn delay-3s'>Go Home</a>
+		</div>
+	</div>
+
+	<script src='https://dabeastservices.github.io/lib/js/bootstrap.bundle.min.js'></script>
+	<script async src='https://www.googletagmanager.com/gtag/js?id=G-RKBJNST9BF'></script>
+	<script src='https://dabeastservices.github.io/lib/js/feather.min.js'></script>
+	<script type='text/javascript' src='https://dabeastservices.github.io/script.js'></script>
+
+	<script type='text/javascript'>
+		// Adjust the iframe height to fit the window
+		function adjustIframeHeight() {
+			const iframeHeight = window.innerHeight;
+			document.getElementById('container').style.height = iframeHeight + 'px';
+		}
+		window.addEventListener('resize', adjustIframeHeight);
+		window.addEventListener('DOMContentLoaded', adjustIframeHeight);
+	</script>
+
+</body>
