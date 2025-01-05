@@ -25,14 +25,4 @@
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
-	<url>
-		<loc>https://dabeastservices.com/detailing</loc>
-		<changefreq>monthly</changefreq>
-		<priority>1.0</priority>
-	</url>
-	<url>
-		<loc>https://dabeastservices.com/detailing/contact.html</loc>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
 </urlset>
