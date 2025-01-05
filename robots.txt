@@ -4,6 +4,7 @@ Disallow: /*.jpeg
 Disallow: /*.png
 Disallow: /*.gif
 Disallow: /*.svg
+Disallow: /*.mp4
 Disallow: /*.avi
 Disallow: /*.mov
 Disallow: /*.wmv
