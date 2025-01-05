@@ -9,6 +9,7 @@ Disallow: /*.avi
 Disallow: /*.mov
 Disallow: /*.wmv
 Disallow: /*.txt
+Disallow: /detailing/
 
 User-Agent: Googlebot-Image
 Disallow: /
