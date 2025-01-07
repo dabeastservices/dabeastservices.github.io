@@ -11,10 +11,4 @@ Disallow: /*.wmv
 Disallow: /*.txt
 Disallow: /detailing/
 
-User-Agent: Googlebot-Image
-Disallow: /
-
-User-Agent: Googlebot-Video
-Disallow: /
-
 Sitemap: https://dabeastservices.com/sitemap.xml
