@@ -6,6 +6,11 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://dabeastservices.com/menu.html</loc>
+		<changefreq>monthly</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
 		<loc>https://dabeastservices.com/menu_food_truck.html</loc>
 		<changefreq>monthly</changefreq>
 		<priority>1.0</priority>
