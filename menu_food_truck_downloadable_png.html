@@ -175,7 +175,7 @@
 				};
 				ctx.translate(-viewport.x, -viewport.y); // Ensure rendering starts from top-left corner
 
-        requestAnimationFrame(() => {
+        			requestAnimationFrame(() => {
 					clearTimeout(canvasRenderTimeout);
 					canvasRenderTimeout = setTimeout(() => {
 						console.log('PDF rendering timeout detected. Showing fallback image.');
