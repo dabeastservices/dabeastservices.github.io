@@ -175,8 +175,7 @@
 				};
 				ctx.translate(-viewport.x, -viewport.y); // Ensure rendering starts from top-left corner
 
-        			requestAnimationFrame(() => {
-					clearTimeout(canvasRenderTimeout);
+        		requestAnimationFrame(() => {
 					canvasRenderTimeout = setTimeout(() => {
 						console.log('PDF rendering timeout detected. Showing fallback image.');
 						renderingFallbackEnabled = true;
@@ -188,7 +187,9 @@
 							fallbackImage.style.width = '100%';
 							fallbackImage.style.height = 'auto';
 							fallbackImage.onload = function () {
+								ctx.translate(-viewport.x, -viewport.y);
 								ctx.drawImage(fallbackImage, 0, 0, canvas.width, canvas.height);
+								ctx.translate(-viewport.x, -viewport.y);
 								renderPage(num + 1);
 							};
 						} catch (error) {
@@ -262,4 +263,5 @@
 
 	</script>
 </body>
+
 </html>
