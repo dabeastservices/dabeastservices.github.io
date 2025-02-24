@@ -195,7 +195,7 @@
 						} catch (error) {
 							console.error("Error rendering fallback image: " + error);
 						}
-					}, renderingFallbackEnabled ? 0 : 2000);
+					}, renderingFallbackEnabled ? 500 : 2000);
 
 					page.render(renderContext).promise.then(function () {
 						clearTimeout(canvasRenderTimeout);
