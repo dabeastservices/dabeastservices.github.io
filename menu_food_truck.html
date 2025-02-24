@@ -131,10 +131,10 @@
 	<script type='text/javascript'>
 		pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://dabeastservices.com/lib/js/pdf.worker.min.js';
 
-		let pdfDoc = null,
-			scale = 6,
-			canvas,
-			ctx;
+		let pdfDoc = null;
+		let scale = 6;
+		let canvas, ctx;
+		let canvasRenderTimeout = null, renderingFallbackEnabled = false;
 
 		// Update the PDF when the page loads
 		function renderPage(num) {
@@ -175,14 +175,33 @@
 				};
 				ctx.translate(-viewport.x, -viewport.y); // Ensure rendering starts from top-left corner
 
-				requestAnimationFrame(() => {
+        			requestAnimationFrame(() => {
+					clearTimeout(canvasRenderTimeout);
+					canvasRenderTimeout = setTimeout(() => {
+						console.log('PDF rendering timeout detected. Showing fallback image.');
+						renderingFallbackEnabled = true;
+						// Render two fallback images: misc/Food_Truck_Menu_1.png and misc/Food_Truck_Menu_2.png
+						let wrappers = document.getElementsByClassName('canvas-wrapper');
+						try {
+							let fallbackImage = document.createElement('img');
+							fallbackImage.src = `misc/Food_Truck_Menu_{num}.png`;
+							fallbackImage.style.width = '100%';
+							fallbackImage.style.height = 'auto';
+							fallbackImage.onload = function () {
+								ctx.drawImage(fallbackImage, 0, 0, canvas.width, canvas.height);
+								renderPage(num + 1);
+							};
+						} catch (error) {
+							console.error("Error rendering fallback image: " + error);
+						}
+					}, renderingFallbackEnabled ? 0 : 2000);
+
 					page.render(renderContext).promise.then(function () {
+						clearTimeout(canvasRenderTimeout);
 						// Render next page once the current one is rendered.
 						if (num < pdfDoc.numPages) {
 							renderPage(num + 1);
 						}
-					}).catch(function(error) {
-						console.error('Error during page rendering:', error);
 					});
 				});
 
