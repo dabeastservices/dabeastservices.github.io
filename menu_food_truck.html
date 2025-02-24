@@ -187,9 +187,11 @@
 							fallbackImage.style.width = '100%';
 							fallbackImage.style.height = 'auto';
 							fallbackImage.onload = function () {
-								ctx.translate(-viewport.x, -viewport.y);
-								ctx.drawImage(fallbackImage, 0, 0, canvas.width, canvas.height);
-								ctx.translate(-viewport.x, -viewport.y);
+								ctx.save();
+								ctx.translate(0, canvas.height / scale);
+								ctx.scale(1, -1);
+								ctx.drawImage(fallbackImage, 0, 0, canvas.width / scale, canvas.height / scale);
+								ctx.restore();
 								renderPage(num + 1);
 							};
 						} catch (error) {
