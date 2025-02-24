@@ -113,7 +113,7 @@
 		<div class='row'>
 			<div class='col-auto footer-col-auto'>
 				<div class='float-download'>
-					<a href='misc/Food_Truck_Menu.pdf' target='_blank' rel='noopener noreferrer'
+					<a href='Food_Truck_Menu.pdf' target='_blank' rel='noopener noreferrer'
 						class='btn btn-sm btn-dark'>Download</a>
 				</div>
 			</div>
@@ -179,11 +179,11 @@
 					canvasRenderTimeout = setTimeout(() => {
 						console.log('PDF rendering timeout detected. Showing fallback image.');
 						renderingFallbackEnabled = true;
-						// Render two fallback images: misc/Food_Truck_Menu_1.png and misc/Food_Truck_Menu_2.png
+						// Render two fallback images: Food_Truck_Menu_1.png and Food_Truck_Menu_2.png
 						let wrappers = document.getElementsByClassName('canvas-wrapper');
 						try {
 							let fallbackImage = document.createElement('img');
-							fallbackImage.src = `misc/Food_Truck_Menu_{num}.png`;
+							fallbackImage.src = `Food_Truck_Menu_{num}.png`;
 							fallbackImage.style.width = '100%';
 							fallbackImage.style.height = 'auto';
 							fallbackImage.onload = function () {
@@ -245,7 +245,7 @@
 		}
 
 		// Set up the PDF viewer
-		// pdfjsLib.getDocument('misc/Food_Truck_Menu.pdf').promise.then(function (pdfDoc_) {
+		// pdfjsLib.getDocument('Food_Truck_Menu.pdf').promise.then(function (pdfDoc_) {
 		// 	pdfDoc = pdfDoc_;
 		// 	renderPage(1);
 		// });
