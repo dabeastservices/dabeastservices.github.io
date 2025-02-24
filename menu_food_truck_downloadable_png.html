@@ -184,8 +184,6 @@
 						try {
 							let fallbackImage = document.createElement('img');
 							fallbackImage.src = `Food_Truck_Menu_{num}.png`;
-							fallbackImage.style.width = '100%';
-							fallbackImage.style.height = 'auto';
 							fallbackImage.onload = function () {
 								ctx.save();
 								ctx.translate(0, canvas.height / scale);
