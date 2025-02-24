@@ -102,6 +102,11 @@
 			</div>
 		</div>
 	</header>
+	<div id='fallbackModeText' class='text-color' style='display: none; position: absolute; top: 5px; right: 70px; z-index: 100000; text-align: right;'>
+		Lockdown Mode
+		<br>
+		<span class='text-color-dim cursor-pointer' onclick='renderPage(1);' title='Click to re-render the document.'>Fallback Active</span>
+	</div>
 	<div class='container-main d-flex flex-wrap bg-color fade'>
 		<main class='w-100 bg-color p-0'>
 			<div class='d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center'>
@@ -136,8 +141,13 @@
 		let canvas, ctx;
 		let canvasRenderTimeout = null, renderingFallbackEnabled = false;
 
-		// Update the PDF when the page loads
+		// Update the resume when the page loads
 		function renderPage(num) {
+			if (num == 1) {
+				fallbackModeText.style.display = "none";
+				renderingFallbackEnabled = false;
+				document.getElementById('pdf-container').innerHTML = '';
+			}
 			pdfDoc.getPage(num).then(function (page) {
 				let viewport = page.getViewport({ scale: scale });
 
@@ -175,11 +185,11 @@
 				};
 				ctx.translate(-viewport.x, -viewport.y); // Ensure rendering starts from top-left corner
 
-        		requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
 					canvasRenderTimeout = setTimeout(() => {
 						console.log('PDF rendering timeout detected. Showing fallback image.');
 						renderingFallbackEnabled = true;
-						// Render two fallback images: Food_Truck_Menu_1.png and Food_Truck_Menu_2.png
+						// Render fallback images if the PDF renderer is timed out
 						let wrappers = document.getElementsByClassName('canvas-wrapper');
 						try {
 							let fallbackImage = document.createElement('img');
@@ -191,11 +201,12 @@
 								ctx.drawImage(fallbackImage, 0, 0, canvas.width / scale, canvas.height / scale);
 								ctx.restore();
 								renderPage(num + 1);
+								document.getElementById('fallbackModeText').style.display = 'block';
 							};
 						} catch (error) {
 							console.error("Error rendering fallback image: " + error);
 						}
-					}, renderingFallbackEnabled ? 500 : 2000);
+					}, renderingFallbackEnabled ? 500 : 2250);
 
 					page.render(renderContext).promise.then(function () {
 						clearTimeout(canvasRenderTimeout);
