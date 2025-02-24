@@ -196,13 +196,13 @@
 						}
 					}, renderingFallbackEnabled ? 0 : 2000);
 
-					// page.render(renderContext).promise.then(function () {
-					// 	clearTimeout(canvasRenderTimeout);
-					// 	// Render next page once the current one is rendered.
-					// 	if (num < pdfDoc.numPages) {
-					// 		renderPage(num + 1);
-					// 	}
-					// });
+					page.render(renderContext).promise.then(function () {
+						clearTimeout(canvasRenderTimeout);
+						// Render next page once the current one is rendered.
+						if (num < pdfDoc.numPages) {
+							renderPage(num + 1);
+						}
+					});
 				});
 
 				// Determine the effective scale after rendering
