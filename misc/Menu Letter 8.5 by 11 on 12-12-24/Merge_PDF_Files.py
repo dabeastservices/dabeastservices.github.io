@@ -44,7 +44,7 @@ def merge_pdfs(pdfs):
 			print(f'Failed to merge file "{pdf}": {e}')
 			continue  # Skip the problematic file
 	
-	output_file = 'MERGED.pdf'
+	output_file = 'Food_Truck_Menu.pdf'
 	doc.save(output_file)  # Save the merged document
 	doc.close()
 	print('File order:\n' + '\n'.join(pdfs))

@@ -1,0 +1,3 @@
+@echo off
+python3 Merge_PDF_Files_Not_Site_Only_For_Poster.py
+pause
