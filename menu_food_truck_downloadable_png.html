@@ -193,7 +193,7 @@
 						let wrappers = document.getElementsByClassName('canvas-wrapper');
 						try {
 							let fallbackImage = document.createElement('img');
-							fallbackImage.src = `Food_Truck_Menu_${num}.png`;
+							fallbackImage.src = `Food_Truck_Menu_{num}.png`;
 							fallbackImage.onload = function () {
 								ctx.save();
 								ctx.translate(0, canvas.height / scale);
