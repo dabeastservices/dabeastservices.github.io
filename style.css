@@ -246,6 +246,7 @@ a:active:not(.btn, .navbar-brand, .nav-link) {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	border-bottom: 2px solid var(--border-color);
 }
 
 .badge-right {
